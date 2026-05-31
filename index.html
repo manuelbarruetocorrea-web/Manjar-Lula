@@ -228,10 +228,18 @@
 
           <!-- Dynamic address form inputs if shipping selected -->
           <div id="address-block" class="hidden space-y-3">
-            <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest">Dirección de despacho*</label>
-            <input type="text" id="delivery-address" placeholder="Ej: Av. Vitacura 1234, Vitacura" class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c]" />
-          </div>
+            <div>
+              <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest mb-1">Dirección de despacho*</label>
+              <input type="text" id="delivery-address" placeholder="Ej: Av. Vitacura 1234, Vitacura" class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c]" />
+            </div>
 
+            <!-- CAMPO DE OBSERVACIONES (NUEVO) -->
+            <div>
+              <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest mb-1">Observaciones de Entrega</label>
+              <textarea id="delivery-notes" rows="2" placeholder="Ej: timbre malo, no hay gente en casa, dejar en conserjería..." class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c] resize-none font-sans"></textarea>
+            </div>
+          </div>
+          
           <!-- Client name -->
           <div class="space-y-2">
             <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest">Tu Nombre</label>
