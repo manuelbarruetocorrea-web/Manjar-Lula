@@ -263,13 +263,20 @@
       </div>
     </section>
 
-    <!-- BANK TRANSFER BANKING INFO CARD -->
+   <!-- BANK TRANSFER BANKING INFO CARD -->
     <section class="max-w-xl mx-auto space-y-4">
       <div class="text-center">
         <h3 class="font-serif text-2xl font-bold text-[#5d4037]">Datos de Transferencia</h3>
         <p class="text-xs text-[#4a463f] mt-1">Transfiere de forma segura y envía el comprobante por WhatsApp</p>
       </div>
+
+      <!-- ALERTA DE STOCK IMPORTANTE (NUEVA) -->
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-2xl max-w-xl mx-auto shadow-sm">
+        <p class="text-xs font-black text-amber-800 uppercase tracking-wider mb-0.5">⚠️ IMPORTANTE</p>
+        <p class="text-xs text-amber-700 font-medium">Antes de transferir pregunta, y espera que Juan te confirme el stock disponible.</p>
+      </div>
       
+      <!-- TARJETA CON NUEVOS DATOS -->
       <div class="bg-[#faf6ed] rounded-3xl border-2 border-[#d9d2c5] p-6 space-y-4 shadow-md font-sans">
         <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
           <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Titular</span>
@@ -277,11 +284,11 @@
         </div>
         <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
           <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">RUT</span>
-          <span class="col-span-2 text-right font-mono font-bold text-[#4a463f]">22.234.096-9</span>
+          <span class="col-span-2 text-right font-mono font-bold text-[#4a463f]">222340969</span>
         </div>
         <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
           <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Banco</span>
-          <span class="col-span-2 text-right font-medium text-[#4a463f]">Banco Santander</span>
+          <span class="col-span-2 text-right font-medium text-[#4a463f]">Mercado Pago</span>
         </div>
         <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
           <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Cuenta</span>
@@ -289,17 +296,26 @@
         </div>
         <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
           <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Número</span>
-          <span class="col-span-2 text-right font-mono font-bold text-[#4a463f]">0 056 22 23409 6</span>
+          <span class="col-span-2 text-right font-mono font-bold text-[#4a463f]">1099212037</span>
         </div>
         <div class="grid grid-cols-3 gap-2 py-2 text-sm">
           <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Correo</span>
-          <span class="col-span-2 text-right font-mono text-xs text-[#4a463f]">JUANBARRUETOCORREA@GMAIL.COM</span>
+          <span class="col-span-2 text-right font-mono text-xs text-[#4a463f]">juanbarruetocorrea@gmail.com</span>
+        </div>
+
+        <!-- BOTÓN PARA COPIAR TODO EN TU FORMATO EXACTO -->
+        <div class="pt-2">
+          <button type="button" onclick="copiarDatosTransferencia(event)" class="w-full py-3 px-4 bg-[#8b5e3c] hover:bg-[#5d4037] text-white text-xs font-bold rounded-xl transition-all shadow-sm tracking-wide uppercase flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+            </svg>
+            Copiar datos de transferencia
+          </button>
         </div>
       </div>
     </section>
 
   </main>
-
   <!-- FOOTER -->
   <footer class="mt-20 border-t border-[#d9d2c5] bg-[#faf7ef] py-10 px-4 text-center text-xs text-[#4a463f]/70 space-y-2">
     <p class="font-serif text-sm font-bold text-[#5d4037]">El Manjar de la Lula · Trabajo País 2026</p>
@@ -397,6 +413,34 @@
 
       window.open(`https://wa.me/56974294429?text=${encodeURIComponent(text)}`, '_blank');
     }
-  </script>
+ <script>
+function copiarDatosTransferencia(event) {
+  // Formato de texto exacto solicitado
+  const textoParaCopiar = `Juan Barrueto Correa
+RUT: 222340969
+Mercado Pago
+Cuenta Vista
+Número de cuenta: 1099212037
+juanbarruetocorrea@gmail.com`;
+
+  navigator.clipboard.writeText(textoParaCopiar).then(() => {
+    // Feedback visual en el botón
+    const btn = event.currentTarget;
+    const htmlOriginal = btn.innerHTML;
+    
+    btn.innerHTML = '¡Datos copiados! ✓';
+    btn.classList.remove('bg-[#8b5e3c]', 'hover:bg-[#5d4037]');
+    btn.classList.add('bg-emerald-600');
+    
+    setTimeout(() => {
+      btn.innerHTML = htmlOriginal;
+      btn.classList.remove('bg-emerald-600');
+      btn.classList.add('bg-[#8b5e3c]', 'hover:bg-[#5d4037]');
+    }, 2000);
+  }).catch(err => {
+    console.error('Error al intentar copiar datos: ', err);
+  });
+}
+</script>
 </body>
 </html>
