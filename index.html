@@ -39,21 +39,24 @@
   <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-14 space-y-12 relative z-10">
     
     <!-- HEADER -->
-    <header class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-14 bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-10 shadow-sm">
+ <header class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-14 bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-10 shadow-sm">
+     
+     <div class="flex-1 flex justify-center md:justify-start">
+       <div class="relative flex items-center justify-center rounded-full bg-[#fcf9f2] border-2 border-[#d9d2c5] shadow-md w-40 h-40 md:w-48 md:h-48">
+         <div class="absolute inset-2.5 rounded-full border border border-dashed border-[#8b5e3c]/60 opacity-80"></div>
+         <div class="text-center px-4 z-10 select-none">
+           <span class="block text-[11px] font-semibold tracking-[0.25em] text-[#8b5e3c] uppercase font-sans">El Manjar</span>
+           <span class="block text-[9px] text-[#8b5e3c]/80 my-0.5 tracking-widest uppercase">— de la —</span>
+           <span class="block font-serif text-4xl italic font-bold text-[#5d4037] my-1">Lula</span>
+           <div class="w-12 h-[1px] bg-[#d9d2c5] mx-auto my-1.5"></div>
+           <span class="block text-[10px] font-medium tracking-[0.15em] text-[#8b5e3c]/90 uppercase font-sans">Manjar Artesanal</span>
+         </div>
+       </div>
+     </div>
+     
+     <div class="flex-[2] text-center md:text-left space-y-3">
       
-      <div class="flex-1 flex justify-center md:justify-start">
-        <div class="relative flex items-center justify-center rounded-full bg-[#fcf9f2] border-2 border-[#d9d2c5] shadow-md w-40 h-40 md:w-48 md:h-48">
-          <div class="absolute inset-2.5 rounded-full border border-dashed border-[#8b5e3c]/60 opacity-80"></div>
-          <div class="text-center px-4 z-10 select-none">
-            <span class="block text-[11px] font-semibold tracking-[0.25em] text-[#8b5e3c] uppercase font-sans">El Manjar</span>
-            <span class="block text-[9px] text-[#8b5e3c]/80 my-0.5 tracking-widest uppercase">— de la —</span>
-            <span class="block font-serif text-4xl italic font-bold text-[#5d4037] my-1">Lula</span>
-            <div class="w-12 h-[1px] bg-[#d9d2c5] mx-auto my-1.5"></div>
-            <span class="block text-[10px] font-medium tracking-[0.15em] text-[#8b5e3c]/90 uppercase font-sans">Manjar Artesanal</span>
-          </div>
-        </div>
-      </div>
-      
+      <!-- Hero Pitch Statement -->
       <div class="flex-[2] text-center md:text-left space-y-3">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#f2ede4] rounded-full border border-[#d9d2c5]/50 text-xs font-bold text-[#8b5e3c] tracking-wider">
           <span>✨ Campaña Solidaria 2026</span>
@@ -120,137 +123,6 @@
         </h3>
         <div class="h-[1px] bg-[#d9d2c5] w-24 my-3"></div>
         <div class="space-y-4 text-sm md:text-base text-[#4a463f] leading-relaxed font-medium">
-          <p class="italic font-serif text-base text-[#5d4037] bg-white/40 p-4 rounded-2xl border-l-4 border-[#8¡Tenías toda la razón en pedir el archivo completo! Al revisar tu código a fondo, pillé exactamente las complicaciones que estabas sufriendo:
-
-1. Tenías una etiqueta de cierre de script huérfana (`</script>`) suelta en la mitad de la lógica del JavaScript.
-2. La función de JavaScript para copiar el texto estaba por fuera de las etiquetas de control principales, lo que rompía su lectura.
-3. El texto que se enviaba por WhatsApp no incluía las nuevas observaciones ingresadas por tus clientes.
-
-Aquí tienes el código completo, corregido, unificado y funcionando al 100%. Solo cópialo entero y reemplaza todo tu archivo actual:
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>El Manjar de la Lula - Manjar Artesanal</title>
-  
-  <!-- Tailwind CSS v4 CDN -->
-  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-  
-  <!-- Google Fonts: Montserrat & Playfair Display -->
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,450;0,600;0,700;1,400&family=JetBrains+Mono:wght@405;700&display=swap](https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,450;0,600;0,700;1,400&family=JetBrains+Mono:wght@405;700&display=swap)" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f2ede4;
-      color: #4a463f;
-    }
-    .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
-    .font-mono {
-      font-family: 'JetBrains Mono', monospace;
-    }
-    /* Simple paper texture subtle background */
-    .kraft-texture {
-      background-color: #f2ede4;
-      background-image: radial-gradient(#d9d2c5 1px, transparent 1px);
-      background-size: 20px 20px;
-    }
-  </style>
-</head>
-<body class="kraft-texture min-h-screen selection:bg-[#d9d2c5] selection:text-[#4a463f] pb-20 relative overflow-x-hidden">
-
-  <!-- Main Container -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-14 space-y-12 relative z-10">
-    
-    <!-- HEADER -->
-    <header class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-14 bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-10 shadow-sm">
-      
-      <div class="flex-1 flex justify-center md:justify-start">
-        <div class="relative flex items-center justify-center rounded-full bg-[#fcf9f2] border-2 border-[#d9d2c5] shadow-md w-40 h-40 md:w-48 md:h-48">
-          <div class="absolute inset-2.5 rounded-full border border-dashed border-[#8b5e3c]/60 opacity-80"></div>
-          <div class="text-center px-4 z-10 select-none">
-            <span class="block text-[11px] font-semibold tracking-[0.25em] text-[#8b5e3c] uppercase font-sans">El Manjar</span>
-            <span class="block text-[9px] text-[#8b5e3c]/80 my-0.5 tracking-widest uppercase">— de la —</span>
-            <span class="block font-serif text-4xl italic font-bold text-[#5d4037] my-1">Lula</span>
-            <div class="w-12 h-[1px] bg-[#d9d2c5] mx-auto my-1.5"></div>
-            <span class="block text-[10px] font-medium tracking-[0.15em] text-[#8b5e3c]/90 uppercase font-sans">Manjar Artesanal</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="flex-[2] text-center md:text-left space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#f2ede4] rounded-full border border-[#d9d2c5]/50 text-xs font-bold text-[#8b5e3c] tracking-wider">
-          <span>✨ Campaña Solidaria 2026</span>
-        </div>
-        <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-black text-[#5d4037] tracking-tight leading-none">
-          El Manjar de la Lula
-        </h1>
-        <h2 class="text-sm font-sans font-bold text-[#8b5e3c] tracking-[0.2em] uppercase">
-          Manjar Artesanal Premium
-        </h2>
-        <div class="w-16 h-[2.5px] bg-[#8b5e3c] mx-auto md:mx-0 my-3"></div>
-        <p class="text-sm md:text-base text-[#4a463f] leading-relaxed font-medium">
-          Apoya la recaudación de fondos para la construcción de la capilla y el salón parroquial para la comunidad de <strong class="text-[#5d4037] font-bold">San Rafael</strong>, llevándote lo mejor del sabor lácteo chileno tradicional hecho en casa.
-        </p>
-      </div>
-
-      <!-- Trabajo Pais Logo representation -->
-      <div class="flex-1 flex justify-center md:justify-end border-t md:border-t-0 md:border-l border-[#d9d2c5] pt-6 md:pt-0 md:pl-8">
-        <div class="flex flex-col items-center justify-center">
-          <div class="relative w-16 h-16 flex items-center justify-center">
-            <svg class="w-full h-full text-[#1d4289]" viewBox="0 0 60 60" fill="currentColor">
-              <path d="M28,2 C29,8 27,20 28,30 C29,40 28,52 27,58 C26,52 25,40 26,30 C27,20 25,8 28,2 Z" />
-              <path d="M4,22 C14,24 28,21 40,22 C52,23 56,21 58,23 C50,25 35,23 28,24 C18,25 8,24 4,22 Z" />
-              <path d="M34,16 C38,22 43,24 48,27 C42,26 38,23 34,16 Z" fill="#d1242a" />
-              <path d="M12,28 C18,32 23,35 25,38 C21,35 16,31 12,28 Z" fill="#d1242a" />
-            </svg>
-          </div>
-          <div class="text-center -mt-1">
-            <span class="block text-[11px] font-extrabold tracking-widest text-[#1d4289] uppercase">TRABAJO</span>
-            <div class="flex items-center justify-center gap-1 leading-none">
-              <span class="text-sm font-black text-[#d1242a]">PAÍS</span>
-              <span class="text-[11px] font-bold text-[#1d4289] font-mono">2026</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- CONTACT BANNER (Directo de flyer) -->
-    <div onclick="window.open('[https://wa.me/56974294429?text=Hola%20Juan,%20quiero%20hacer%20un%20pedido%20de%20El%20Manjar%20de%20la%20Lula%20para%20apoyar%20a%20San%20Rafael](https://wa.me/56974294429?text=Hola%20Juan,%20quiero%20hacer%20un%20pedido%20de%20El%20Manjar%20de%20la%20Lula%20para%20apoyar%20a%20San%20Rafael)', '_blank')" class="bg-[#8b5e3c] text-white rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md max-w-2xl mx-auto hover:bg-[#7c4f30] hover:scale-[1.01] transition-all cursor-pointer border border-[#d9d2c5]/20">
-      <div class="flex items-center gap-3">
-        <div class="p-2.5 bg-white/10 rounded-2xl">
-          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.004 2C6.48 2 2 6.482 2 12.004c0 1.848.502 3.578 1.377 5.071L2.051 22l5.08-.1.32-.191A9.972 9.972 0 0012.004 22c5.522 0 10.002-4.48 10.002-10.002C22.006 6.481 17.526 2 12.004 2zm5.79 14.157c-.244.69-1.218 1.353-1.685 1.408-.466.056-.913.235-3.003-.585-2.513-.986-4.106-3.522-4.23-3.69-.124-.168-1.02-1.352-1.02-2.58 0-1.226.643-1.83.871-2.079.23-.25.5-.31.664-.31a.48.48 0 01.446.28c.189.456.645 1.57.7 1.684.057.114.086.248.01.402-.075.153-.163.243-.27.368-.109.124-.228.261-.097.487.13.226.577.95 1.238 1.537.852.757 1.568.992 1.79 1.104.223.111.353.093.484-.058.13-.153.56-.653.71-.876.151-.223.3-.186.505-.111l2.023.953c.205.093.342.14.394.223.052.083.052.484-.192 1.174z"/></svg>
-        </div>
-        <div class="text-center sm:text-left">
-          <span class="block text-[9px] uppercase tracking-widest font-extrabold text-white/80 leading-none">PEDIDOS WHATSAPP</span>
-          <span class="text-lg font-serif font-black text-white leading-tight">Juan Barrueto</span>
-        </div>
-      </div>
-      <div class="flex items-center gap-2 bg-white/15 px-4 py-2 rounded-xl border border-white/20 font-mono text-sm md:text-base font-bold text-white">
-        <span>+56 9 7429 4429</span>
-      </div>
-    </div>
-
-    <!-- MISSION HISTORY -->
-    <section class="bg-[#fcfaf4] rounded-[30px] border border-[#d9d2c5]/70 p-6 md:p-8 relative shadow-md">
-      <div class="absolute top-4 right-4 bg-[#f2ede4] border border-[#d9d2c5] w-12 h-14 rounded-md flex items-center justify-center text-[#8b5e3c] font-serif text-[10px] select-none uppercase font-bold tracking-widest">
-         CL
-      </div>
-      <div class="max-w-2xl">
-        <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block mb-2">🧑‍🌾 Nuestra Motivación</span>
-        <h3 class="font-serif text-2xl md:text-3xl font-extrabold text-[#5d4037] leading-tight">
-          Misión San Rafael — Trabajo País 2026
-        </h3>
-        <div class="h-[1px] bg-[#d9d2c5] w-24 my-3"></div>
-        <div class="space-y-4 text-sm md:text-base text-[#4a463f] leading-relaxed font-medium">
           <p class="italic font-serif text-base text-[#5d4037] bg-white/40 p-4 rounded-2xl border-l-4 border-[#8b5e3c]">
             "¡Hola a todos! Somos el equipo de trabajo país de San Rafael y estamos juntando fondos para construir un salón parroquial para la comunidad. 🏡"
           </p>
@@ -267,8 +139,7 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
       </div>
     </section>
 
-    <!-- PRODUCTOS -->
-    <section class="space-y-8">
+<section class="space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block">Productos</span>
         <h3 class="font-serif text-3xl md:text-4xl font-extrabold text-[#5d4037]">Formatos y Precios</h3>
@@ -279,9 +150,11 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
         <div class="bg-white rounded-3xl border border-[#d9d2c5]/60 p-6 flex flex-col items-center justify-between shadow-md relative overflow-hidden group">
           <div class="absolute top-3 right-3 bg-[#f2ede4] text-[#8b5e3c] text-[10px] font-bold uppercase py-1 px-2.5 rounded-full tracking-wider">Popular</div>
           <div class="text-center mt-3 w-full flex flex-col items-center">
+            
             <div class="w-32 h-32 rounded-2xl overflow-hidden bg-white flex items-center justify-center border border-[#d9d2c5]/40 shadow-sm">
               <img src="image_6e49fc.jpg" alt="Pote Individual" class="w-full h-full object-contain p-1">
             </div>
+            
             <span class="text-xs font-mono text-[#8b5e3c] font-semibold tracking-widest block uppercase mt-4">400 Gramos</span>
             <h4 class="font-serif text-lg font-bold text-[#5d4037] mt-1">Pote Individual</h4>
             <span class="text-2xl font-serif font-black text-[#5d4037] block mt-2">$4.000</span>
@@ -296,9 +169,11 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
         <div class="bg-[#fcfbf9] rounded-3xl border-2 border-[#8b5e3c]/35 p-6 flex flex-col items-center justify-between shadow-md relative overflow-hidden group">
           <div class="absolute top-3 right-3 bg-[#8b5e3c] text-white text-[10px] font-bold uppercase py-1 px-2.5 rounded-full tracking-wider">Ahorras $500</div>
           <div class="text-center mt-3 w-full flex flex-col items-center">
+            
             <div class="w-32 h-32 rounded-2xl overflow-hidden bg-white flex items-center justify-center border border-[#d9d2c5]/40 shadow-sm">
               <img src="image_6e4962.jpg" alt="Dos Potes" class="w-full h-full object-contain p-1">
             </div>
+
             <span class="text-xs font-mono text-[#8b5e3c] font-semibold tracking-widest block uppercase mt-4">800 Gramos</span>
             <h4 class="font-serif text-lg font-bold text-[#5d4037] mt-1">Dos Potes</h4>
             <span class="text-2xl font-serif font-black text-[#8b5e3c] block mt-2">$7.500</span>
@@ -313,9 +188,11 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
         <div class="bg-white rounded-3xl border border-[#d9d2c5]/60 p-6 flex flex-col items-center justify-between shadow-md relative overflow-hidden group">
           <div class="absolute top-3 right-3 bg-[#5d4037] text-white text-[10px] font-bold uppercase py-1 px-2.5 rounded-full tracking-wider">Ahorras $1.500</div>
           <div class="text-center mt-3 w-full flex flex-col items-center">
+            
             <div class="w-32 h-32 rounded-2xl overflow-hidden bg-white flex items-center justify-center border border-[#d9d2c5]/40 shadow-sm">
               <img src="image_6e46b4.jpg" alt="Tres Potes" class="w-full h-full object-contain p-1">
             </div>
+
             <span class="text-xs font-mono text-[#8b5e3c] font-semibold tracking-widest block uppercase mt-4">1200 Gramos</span>
             <h4 class="font-serif text-lg font-bold text-[#5d4037] mt-1">Tres Potes</h4>
             <span class="text-2xl font-serif font-black text-[#5d4037] block mt-2">$10.500</span>
@@ -356,7 +233,7 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
               <input type="text" id="delivery-address" placeholder="Ej: Av. Vitacura 1234, Vitacura" class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c]" />
             </div>
 
-            <!-- CAMPO DE OBSERVACIONES -->
+            <!-- CAMPO DE OBSERVACIONES (NUEVO) -->
             <div>
               <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest mb-1">Observaciones de Entrega</label>
               <textarea id="delivery-notes" rows="2" placeholder="Ej: timbre malo, no hay gente en casa, dejar en conserjería..." class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c] resize-none font-sans"></textarea>
@@ -394,14 +271,14 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
       </div>
     </section>
 
-    <!-- BANK TRANSFER BANKING INFO CARD -->
+   <!-- BANK TRANSFER BANKING INFO CARD -->
     <section class="max-w-xl mx-auto space-y-4">
       <div class="text-center">
         <h3 class="font-serif text-2xl font-bold text-[#5d4037]">Datos de Transferencia</h3>
         <p class="text-xs text-[#4a463f] mt-1">Transfiere de forma segura y envía el comprobante por WhatsApp</p>
       </div>
 
-      <!-- ALERTA DE STOCK IMPORTANTE -->
+      <!-- ALERTA DE STOCK IMPORTANTE (NUEVA) -->
       <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-2xl max-w-xl mx-auto shadow-sm">
         <p class="text-xs font-black text-amber-800 uppercase tracking-wider mb-0.5">⚠️ IMPORTANTE</p>
         <p class="text-xs text-amber-700 font-medium">Antes de transferir pregunta y espera que Juan te confirme el stock disponible.</p>
@@ -434,10 +311,10 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
           <span class="col-span-2 text-right font-mono text-xs text-[#4a463f]">juanbarruetocorrea@gmail.com</span>
         </div>
 
-        <!-- BOTÓN PARA COPIAR TODO -->
+        <!-- BOTÓN PARA COPIAR TODO EN TU FORMATO EXACTO -->
         <div class="pt-2">
           <button type="button" onclick="copiarDatosTransferencia(event)" class="w-full py-3 px-4 bg-[#8b5e3c] hover:bg-[#5d4037] text-white text-xs font-bold rounded-xl transition-all shadow-sm tracking-wide uppercase flex items-center justify-center gap-2">
-            <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
             </svg>
             Copiar datos de transferencia
@@ -447,7 +324,6 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
     </section>
 
   </main>
-
   <!-- FOOTER -->
   <footer class="mt-20 border-t border-[#d9d2c5] bg-[#faf7ef] py-10 px-4 text-center text-xs text-[#4a463f]/70 space-y-2">
     <p class="font-serif text-sm font-bold text-[#5d4037]">El Manjar de la Lula · Trabajo País 2026</p>
@@ -455,7 +331,7 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
   </footer>
 
   <!-- DYNAMIC CALCULATOR INTERACTION JAVASCRIPT -->
-  <script>
+  </script>
     // Quantities state
     const qty = {
       single: 0,
@@ -516,7 +392,6 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
 
       const name = document.getElementById('client-name').value.trim();
       const address = document.getElementById('delivery-address').value.trim();
-      const notes = document.getElementById('delivery-notes').value.trim();
 
       if (isShipping && address === '') {
         alert("Por favor indica la dirección de despacho.");
@@ -536,10 +411,44 @@ Aquí tienes el código completo, corregido, unificado y funcionando al 100%. So
       if (isShipping) {
         text += `• Despacho a domicilio (+$1.500)\n`;
         text += `• Dirección: ${address}\n`;
-        if (notes) text += `• Observaciones: ${notes}\n`;
       } else {
         text += `• Retiro presencial listo a acordar.\n`;
       }
 
       const grandTotal = subtotal + (isShipping ? PRICES.shipping : 0);
-      text += `\n*M
+      text += `\n*Monto Total:* $${grandTotal.toLocaleString('es-CL')}\n\n`;
+      text += `¿Me confirmas disponibilidad para transferir? 😊`;
+
+      window.open(`https://wa.me/56974294429?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
+function copiarDatosTransferencia(event) {
+  // Formato de texto exacto solicitado
+  const textoParaCopiar = `Juan Barrueto Correa
+RUT: 222340969
+Mercado Pago
+Cuenta Vista
+Número de cuenta: 1099212037
+juanbarruetocorrea@gmail.com`;
+
+  navigator.clipboard.writeText(textoParaCopiar).then(() => {
+    // Feedback visual en el botón
+    const btn = event.currentTarget;
+    const htmlOriginal = btn.innerHTML;
+    
+    btn.innerHTML = '¡Datos copiados! ✓';
+    btn.classList.remove('bg-[#8b5e3c]', 'hover:bg-[#5d4037]');
+    btn.classList.add('bg-emerald-600');
+    
+    setTimeout(() => {
+      btn.innerHTML = htmlOriginal;
+      btn.classList.remove('bg-emerald-600');
+      btn.classList.add('bg-[#8b5e3c]', 'hover:bg-[#5d4037]');
+    }, 2000);
+  }).catch(err => {
+    console.error('Error al intentar copiar datos: ', err);
+  });
+}
+</script>
+</body>
+</html>
