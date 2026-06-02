@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>El Manjar de la Lula - Manjar Artesanal</title>
   
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Google Fonts: Montserrat & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,450;0,600;0,700;1,400&family=JetBrains+Mono:wght@405;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,450;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -31,14 +27,16 @@
       background-image: radial-gradient(#d9d2c5 1px, transparent 1px);
       background-size: 20px 20px;
     }
-  </style>
-</head>
-<body class="kraft-texture min-h-screen selection:bg-[#d9d2c5] selection:text-[#4a463f] pb-20 relative overflow-x-hidden">
+    /* Proporciones de Hoja Tamaño Carta (8.5 x 11 pulgadas) */
+    .letter-page {
+      aspect-ratio: 8.5 / 11;
+      width: 100%;
+      max-width: 768px; /* Ancho estándar de lectura en escritorio/tablet */
+    }
+  </style></head><body class="kraft-texture min-h-screen selection:bg-[#d9d2c5] selection:text-[#4a463f] pb-20 relative overflow-x-hidden">
 
-  <!-- Main Container -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-14 space-y-12 relative z-10">
+  <main id="main-store" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-14 space-y-12 relative z-10">
     
-    <!-- HEADER -->
     <header class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-14 bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-10 shadow-sm">
       
       <div class="flex-1 flex justify-center md:justify-start">
@@ -54,10 +52,9 @@
         </div>
       </div>
       
-      <!-- Hero Pitch Statement (Corregido contenedor duplicado) -->
       <div class="flex-[2] text-center md:text-left space-y-3">
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#f2ede4] rounded-full border border-[#d9d2c5]/50 text-xs font-bold text-[#8b5e3c] tracking-wider">
-          <span>✨ Campaña Solidaria 2026</span>
+          <span>Campaña Solidaria 2026</span>
         </div>
         <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-black text-[#5d4037] tracking-tight leading-none">
           El Manjar de la Lula
@@ -71,18 +68,12 @@
         </p>
       </div>
 
-      <!-- Trabajo Pais Logo representation -->
       <div class="flex-1 flex justify-center md:justify-end border-t md:border-t-0 md:border-l border-[#d9d2c5] pt-6 md:pt-0 md:pl-8">
         <div class="flex flex-col items-center justify-center">
-          <div class="relative w-16 h-16 flex items-center justify-center">
-            <svg class="w-full h-full text-[#1d4289]" viewBox="0 0 60 60" fill="currentColor">
-              <path d="M28,2 C29,8 27,20 28,30 C29,40 28,52 27,58 C26,52 25,40 26,30 C27,20 25,8 28,2 Z" />
-              <path d="M4,22 C14,24 28,21 40,22 C52,23 56,21 58,23 C50,25 35,23 28,24 C18,25 8,24 4,22 Z" />
-              <path d="M34,16 C38,22 43,24 48,27 C42,26 38,23 34,16 Z" fill="#d1242a" />
-              <path d="M12,28 C18,32 23,35 25,38 C21,35 16,31 12,28 Z" fill="#d1242a" />
-            </svg>
+          <div class="w-24 h-24 rounded-full border-2 border-[#1d4289]/30 p-1 bg-white shadow-sm overflow-hidden flex items-center justify-center">
+            <img src="logo_tp.png" alt="Logo Trabajo País" class="w-full h-full object-contain rounded-full">
           </div>
-          <div class="text-center -mt-1">
+          <div class="text-center mt-2">
             <span class="block text-[11px] font-extrabold tracking-widest text-[#1d4289] uppercase">TRABAJO</span>
             <div class="flex items-center justify-center gap-1 leading-none">
               <span class="text-sm font-black text-[#d1242a]">PAÍS</span>
@@ -93,14 +84,13 @@
       </div>
     </header>
 
-    <!-- CONTACT BANNER (Directo de flyer) -->
-    <div onclick="window.open('https://wa.me/56974294429?text=Hola%20Juan,%20quiero%20hacer%20un%20pedido%20de%20El%20Manjar%20de%20la%20Lula%20para%20apoyar%20a%20San%20Rafael', '_blank')" class="bg-[#8b5e3c] text-white rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md max-w-2xl mx-auto hover:bg-[#7c4f30] hover:scale-[1.01] transition-all cursor-pointer border border-[#d9d2c5]/20">
+    <div class="bg-[#8b5e3c] text-white rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md max-w-2xl mx-auto border border-[#d9d2c5]/20">
       <div class="flex items-center gap-3">
         <div class="p-2.5 bg-white/10 rounded-2xl">
           <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.004 2C6.48 2 2 6.482 2 12.004c0 1.848.502 3.578 1.377 5.071L2.051 22l5.08-.1.32-.191A9.972 9.972 0 0012.004 22c5.522 0 10.002-4.48 10.002-10.002C22.006 6.481 17.526 2 12.004 2zm5.79 14.157c-.244.69-1.218 1.353-1.685 1.408-.466.056-.913.235-3.003-.585-2.513-.986-4.106-3.522-4.23-3.69-.124-.168-1.02-1.352-1.02-2.58 0-1.226.643-1.83.871-2.079.23-.25.5-.31.664-.31a.48.48 0 01.446.28c.189.456.645 1.57.7 1.684.057.114.086.248.01.402-.075.153-.163.243-.27.368-.109.124-.228.261-.097.487.13.226.577.95 1.238 1.537.852.757 1.568.992 1.79 1.104.223.111.353.093.484-.058.13-.153.56-.653.71-.876.151-.223.3-.186.505-.111l2.023.953c.205.093.342.14.394.223.052.083.052.484-.192 1.174z"/></svg>
         </div>
         <div class="text-center sm:text-left">
-          <span class="block text-[9px] uppercase tracking-widest font-extrabold text-white/80 leading-none">PEDIDOS WHATSAPP</span>
+          <span class="block text-[9px] uppercase tracking-widest font-extrabold text-white/80 /80 leading-none">Coordinador General de Pedidos</span>
           <span class="text-lg font-serif font-black text-white leading-tight">Juan Barrueto</span>
         </div>
       </div>
@@ -109,35 +99,27 @@
       </div>
     </div>
 
-    <!-- MISSION HISTORY -->
     <section class="bg-[#fcfaf4] rounded-[30px] border border-[#d9d2c5]/70 p-6 md:p-8 relative shadow-md">
       <div class="absolute top-4 right-4 bg-[#f2ede4] border border-[#d9d2c5] w-12 h-14 rounded-md flex items-center justify-center text-[#8b5e3c] font-serif text-[10px] select-none uppercase font-bold tracking-widest">
-         CL
+          CL
       </div>
       <div class="max-w-2xl">
-        <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block mb-2">🧑‍🌾 Nuestra Motivación</span>
+        <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block mb-2">Nuestra Motivación</span>
         <h3 class="font-serif text-2xl md:text-3xl font-extrabold text-[#5d4037] leading-tight">
           Misión San Rafael — Trabajo País 2026
         </h3>
         <div class="h-[1px] bg-[#d9d2c5] w-24 my-3"></div>
         <div class="space-y-4 text-sm md:text-base text-[#4a463f] leading-relaxed font-medium">
           <p class="italic font-serif text-base text-[#5d4037] bg-white/40 p-4 rounded-2xl border-l-4 border-[#8b5e3c]">
-            "¡Hola a todos! Somos el equipo de trabajo país de San Rafael y estamos juntando fondos para construir un salón parroquial para la comunidad. 🏡"
+            "Estimada comunidad: Somos el equipo de Trabajo País encargado de la zona de San Rafael. Nos encontramos reuniendo los fondos necesarios para llevar a cabo la edificación del nuevo salón parroquial del sector."
           </p>
           <p>
-            Este invierno, jóvenes voluntarios viajaremos con el objetivo de levantar un espacio digno y cálido de encuentro, aprendizaje y espiritualidad para todas las familias del sector. Cada peso recaudado va directamente a materiales de construcción.
+            Durante el próximo periodo invernal, un grupo de voluntarios se trasladará a la localidad con el fin de consolidar una infraestructura comunitaria digna y óptima para el encuentro de las familias. La totalidad de los ingresos percibidos por esta campaña se destinará exclusivamente a la adquisición de insumos de construcción.
           </p>
-          <div class="bg-[#f2ede4]/50 border border-[#8b5e3c]/25 p-4 rounded-2xl mt-4 flex items-start gap-3">
-            <span class="text-red-500 scale-125">❤️</span>
-            <p class="text-xs md:text-sm text-[#4a463f] font-bold">
-              "Puedes apoyar nuestra zona comprando y llevándote una delicia artesanal. ¡Mil gracias por apañar y ayudarnos a llegar a la meta!"
-            </p>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- FORMATOS Y PRECIOS -->
     <section class="space-y-8">
       <div class="text-center space-y-2">
         <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block">Productos</span>
@@ -145,8 +127,6 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Pote Individual -->
         <div class="bg-white rounded-3xl border border-[#d9d2c5]/60 p-6 flex flex-col items-center justify-between shadow-md relative overflow-hidden group">
           <div class="absolute top-3 right-3 bg-[#f2ede4] text-[#8b5e3c] text-[10px] font-bold uppercase py-1 px-2.5 rounded-full tracking-wider">Popular</div>
           <div class="text-center mt-3 w-full flex flex-col items-center">
@@ -164,7 +144,6 @@
           </div>
         </div>
 
-        <!-- Dos Potes -->
         <div class="bg-[#fcfbf9] rounded-3xl border-2 border-[#8b5e3c]/35 p-6 flex flex-col items-center justify-between shadow-md relative overflow-hidden group">
           <div class="absolute top-3 right-3 bg-[#8b5e3c] text-white text-[10px] font-bold uppercase py-1 px-2.5 rounded-full tracking-wider">Ahorras $500</div>
           <div class="text-center mt-3 w-full flex flex-col items-center">
@@ -182,7 +161,6 @@
           </div>
         </div>
 
-        <!-- Tres Potes (Corregido nombre de imagen) -->
         <div class="bg-white rounded-3xl border border-[#d9d2c5]/60 p-6 flex flex-col items-center justify-between shadow-md relative overflow-hidden group">
           <div class="absolute top-3 right-3 bg-[#5d4037] text-white text-[10px] font-bold uppercase py-1 px-2.5 rounded-full tracking-wider">Ahorras $1.500</div>
           <div class="text-center mt-3 w-full flex flex-col items-center">
@@ -199,11 +177,9 @@
             <button type="button" onclick="changeQty('triple', 1)" class="w-10 h-10 rounded-xl bg-[#f2ede4] hover:bg-[#d9d2c5] font-black text-lg">+</button>
           </div>
         </div>
-
       </div>
- </section>
+    </section>
 
-    <!-- Live Order Calculator Summary Sheet -->
     <section class="bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-8 shadow-sm space-y-6">
       <div class="flex items-center gap-3 border-b border-[#d9d2c5]/50 pb-4">
         <div class="p-2 bg-[#8b5e3c]/10 rounded-xl text-[#8b5e3c]">
@@ -212,12 +188,11 @@
           </svg>
         </div>
         <div>
-          <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block">Calculadora en Vivo</span>
+          <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block">Panel de Pedidos</span>
           <h3 class="font-serif text-xl md:text-2xl font-black text-[#5d4037]">Resumen de tu Pedido</h3>
         </div>
       </div>
 
-      <!-- Tabla de desglose -->
       <div class="overflow-hidden border border-[#d9d2c5]/50 rounded-2xl bg-white">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
@@ -243,80 +218,173 @@
               <td id="table-qty-triple" class="p-4 text-center font-mono font-bold">0</td>
               <td id="table-sub-triple" class="p-4 text-right font-mono">$0</td>
             </tr>
+            <tr id="row-delivery-charge" class="hidden">
+              <td class="p-4 text-[#8b5e3c] font-bold">Recargo por Despacho</td>
+              <td class="p-4 text-center font-mono font-bold">—</td>
+              <td id="table-sub-delivery" class="p-4 text-right font-mono text-[#8b5e3c]">$1.500</td>
+            </tr>
             <tr id="row-empty">
               <td colspan="3" class="p-8 text-center text-sm italic text-[#4a463f]/60 bg-[#fcfbf9]">
-                No has seleccionado ningún producto aún. ¡Usa los botones de arriba para armar tu pedido!
+                No ha seleccionado ningún producto aún. Utilice los controladores de cantidad para estructurar su requerimiento.
               </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Opciones de Despacho / Retiro -->
       <div class="space-y-3">
         <label class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Método de Entrega</label>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-[#d9d2c5]/60 cursor-pointer hover:bg-[#fcfbf9] transition-colors">
-            <input type="radio" name="delivery-method" value="Retiro en Vitacura" checked onchange="toggleDeliveryFields()" class="w-4 h-4 text-[#8b5e3c] focus:ring-[#8b5e3c]">
+            <input type="radio" name="delivery-method" value="Retiro en Las Condes" checked onchange="toggleDeliveryFields()" class="w-4 h-4 text-[#8b5e3c] focus:ring-[#8b5e3c]">
             <div class="text-sm">
-              <span class="block font-bold text-[#5d4037]">Retiro en Vitacura</span>
-              <span class="text-xs text-[#4a463f]/80">Gratis (Coordinar dirección)</span>
+              <span class="block font-bold text-[#5d4037]">Retiro en Las Condes</span>
+              <span class="text-xs text-[#4a463f]/80">Sin costo adicional (Lugar fijo de entrega)</span>
             </div>
           </label>
           <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-[#d9d2c5]/60 cursor-pointer hover:bg-[#fcfbf9] transition-colors">
             <input type="radio" name="delivery-method" value="Despacho a domicilio" onchange="toggleDeliveryFields()" class="w-4 h-4 text-[#8b5e3c] focus:ring-[#8b5e3c]">
             <div class="text-sm">
               <span class="block font-bold text-[#5d4037]">Despacho a Domicilio</span>
-              <span class="text-xs text-[#4a463f]/80">Sujeto a factibilidad y costo extra</span>
+              <span class="text-xs text-[#4a463f]/80">Sujeto a comunas seleccionadas y recargo logístico (+$1.500)</span>
             </div>
           </label>
         </div>
       </div>
 
-      <!-- Formulario de Datos de Envío -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
         <div class="space-y-1.5">
-          <label for="user-name" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Tu Nombre completo</label>
+          <label for="user-name" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Nombre Completo</label>
           <input type="text" id="user-name" placeholder="Ej. María Jesús Larraín" class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]">
         </div>
         <div id="container-address" class="space-y-1.5 opacity-40 pointer-events-none transition-all duration-200">
           <label for="user-address" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Dirección de Despacho</label>
-          <input type="text" id="user-address" disabled placeholder="Ej. Av. Luis Pasteur 1234, Vitacura" class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]">
+          <input type="text" id="user-address" disabled onblur="validateAddressField()" onfocus="clearAddressError()" placeholder="Ej. Av. Luis Pasteur 1234, Vitacura" class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]">
+          
+          <div class="text-[11px] font-medium text-[#8b5e3c] bg-[#fdfbf6] border border-[#d9d2c5]/60 rounded-lg px-2.5 py-1.5 mt-1 select-none flex items-center gap-1.5">
+            <span class="font-bold uppercase tracking-wider text-[9px] px-1.5 py-0.5 bg-[#f2ede4] rounded text-[#4a463f]">Disponibles:</span>
+            <span>Vitacura, Las Condes, Lo Barnechea.</span>
+          </div>
+
+          <div id="address-error-alert" class="hidden bg-red-50 border border-red-200 text-red-700 rounded-xl p-3 flex items-center gap-2 mt-1 transition-all duration-200 animate-fadeIn">
+            <svg class="w-4 h-4 shrink-0 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-xs font-semibold">No se puede realizar la entrega en esa comuna</span>
+          </div>
         </div>
       </div>
 
-      <!-- Observaciones -->
       <div class="space-y-1.5">
-        <label for="user-notes" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Notas / Observaciones Especiales</label>
-        <textarea id="user-notes" rows="2" placeholder="Ej. Dejar en conserjería, envolver para regalo, restricciones de horario..." class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]"></textarea>
+        <label for="user-notes" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Instrucciones Especiales u Observaciones</label>
+        <textarea id="user-notes" rows="2" placeholder="Ej. Recepción en conserjería, especificaciones de horarios, empaques individuales..." class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]"></textarea>
       </div>
 
-      <!-- Total de la orden -->
+      <div class="bg-white rounded-2xl p-5 border border-[#d9d2c5]/60 space-y-4 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#d9d2c5]/40 pb-3">
+          <div>
+            <span class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Datos Reales de Transferencia</span>
+            <p class="text-xs text-[#4a463f]/70 font-medium">Transfiere directamente para confirmar tu aporte solidario.</p>
+          </div>
+          <button type="button" onclick="copyTransferData()" class="inline-flex items-center gap-2 bg-[#8b5e3c] hover:bg-[#7c4f30] text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm transition-all border border-[#d9d2c5]/10 shrink-0">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m3 4h.01M9 16h.01"></path>
+            </svg>
+            <span id="transfer-btn-text">Copiar Datos de Transferencia</span>
+          </button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-medium text-[#4a463f]/90">
+          <div><strong class="text-[#5d4037]">Nombre:</strong> Juan Barrueto Correa</div>
+          <div><strong class="text-[#5d4037]">RUT:</strong> 22.234.096-9</div>
+          <div><strong class="text-[#5d4037]">Banco:</strong> Mercado Pago</div>
+          <div><strong class="text-[#5d4037]">Tipo Cuenta:</strong> Cuenta Vista</div>
+          <div><strong class="text-[#5d4037]">N° Cuenta:</strong> 1099212037</div>
+          <div><strong class="text-[#5d4037]">Correo:</strong> juanbarruetocorrea@gmail.com</div>
+        </div>
+      </div>
+
       <div class="bg-[#f2ede4]/40 rounded-2xl p-5 flex items-center justify-between border border-[#d9d2c5]/40">
         <div>
-          <span class="block text-xs uppercase font-extrabold tracking-wider text-[#8b5e3c]/80">Total a Recaudar</span>
-          <span class="text-xs text-[#4a463f]/80 font-medium">Todo va directo a los materiales de construcción</span>
+          <span class="block text-xs uppercase font-extrabold tracking-wider text-[#8b5e3c]/80">Total Neto Comprometido</span>
+          <span class="text-xs text-[#4a463f]/80 font-medium">Los fondos recaudados se auditan para el proyecto Capilla San Rafael.</span>
         </div>
         <div id="total-price" class="text-3xl font-serif font-black text-[#5d4037] tracking-tight">$0</div>
       </div>
 
-      <!-- Botón de Acción con ID para el cambio a "Copiado" -->
       <div class="max-w-md mx-auto pt-2">
-        <button type="button" id="btn-copy" onclick="copyOrderSummary()" class="w-full bg-[#8b5e3c] text-white rounded-2xl py-4 px-6 font-serif font-bold text-base flex items-center justify-center gap-3 shadow-md hover:bg-[#7c4f30] transition-all cursor-pointer border border-[#d9d2c5]/20">
+        <button type="button" onclick="goToDraftScreen()" class="w-full bg-[#8b5e3c] text-white rounded-2xl py-4 px-6 font-serif font-bold text-base flex items-center justify-center gap-3 shadow-md hover:bg-[#7c4f30] transition-all cursor-pointer border border-[#d9d2c5]/20">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h10a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
           </svg>
-          <span id="btn-copy-text">Copiar Datos de Pedido</span>
+          <span>Revisar Borrador de Pedido</span>
         </button>
         <p class="text-[11px] text-center text-[#4a463f]/70 font-medium mt-3 leading-normal px-4">
-          Al copiar, se guardará el resumen listo en tu portapapeles. Luego podrás pegarlo directamente en el chat de WhatsApp de Juan para coordinar tu entrega y pago.
+          El sistema compilará la información y lo dirigirá a la sección interna de edición con formato formal antes de despachar el canal de comunicación.
         </p>
       </div>
     </section>
-
   </main>
 
-  <!-- LOGIC SCRIPT -->
+
+  <section id="main-draft" class="hidden max-w-4xl mx-auto px-4 pt-8 md:pt-12 space-y-6 relative z-10 animate-fadeIn">
+    <div class="flex justify-start">
+      <button type="button" onclick="goToStoreScreen()" class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#8b5e3c] hover:text-[#5d4037] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Volver a la calculadora
+      </button>
+    </div>
+
+    <div class="text-center space-y-1">
+      <h3 class="font-serif text-2xl font-extrabold text-[#5d4037]">Borrador Institucional de Solicitud</h3>
+      <p class="text-xs text-[#4a463f]/80">Edite, agregue o verifique formalmente la información contenida en la plantilla tamaño carta.</p>
+    </div>
+
+    <div class="flex justify-center w-full">
+      <div class="letter-page bg-[#fdfbf9] rounded-md border border-[#d9d2c5] shadow-xl p-8 md:p-14 flex flex-col justify-between relative">
+        
+        <div class="absolute top-0 bottom-0 left-6 md:left-10 w-[1px] bg-red-200/50 pointer-events-none"></div>
+        
+        <div class="w-full h-full flex flex-col space-y-4 z-10">
+          <div class="flex justify-between items-start border-b border-[#d9d2c5]/60 pb-3 text-[11px] font-mono text-[#8b5e3c]">
+            <div>DOCUMENTO: HOJA DE RUTA / PEDIDOS V2026</div>
+            <div>ESTADO: BORRADOR EDITABLE</div>
+          </div>
+
+          <div class="flex-1 flex flex-col">
+            <label for="draft-text-content" class="sr-only">Contenido del Mensaje</label>
+            <textarea id="draft-text-content" class="w-full flex-1 min-h-[400px] md:min-h-[500px] bg-transparent font-mono text-xs md:text-sm text-[#4a463f] leading-relaxed resize-none focus:outline-none focus:ring-0" placeholder="Cargando estructura formal del pedido..."></textarea>
+          </div>
+        </div>
+
+        <div class="border-t border-[#d9d2c5]/40 pt-4 text-center text-[10px] font-mono text-[#4a463f]/50 select-none">
+          Fin del Registro Formal — Campaña Trabajo País San Rafael 2026
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-md mx-auto pt-4 space-y-3">
+      <button type="button" onclick="copyEntireDraftToClipboard()" class="w-full bg-[#8b5e3c] text-white rounded-2xl py-3 px-6 font-serif font-bold text-sm flex items-center justify-center gap-3 shadow-md hover:bg-[#7c4f30] transition-all cursor-pointer border border-[#d9d2c5]/20">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+        </svg>
+        <span id="copy-btn-text">Copiar Todo el Pedido</span>
+      </button>
+
+      <button type="button" onclick="sendToWhatsApp()" class="w-full bg-emerald-600 text-white rounded-2xl py-4 px-6 font-serif font-bold text-base flex items-center justify-center gap-3 shadow-md hover:bg-emerald-700 transition-all cursor-pointer border border-[#d9d2c5]/20">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-3.507c1.66.986 3.288 1.503 4.812 1.504 5.533 0 10.038-4.502 10.042-10.029.002-2.678-1.04-5.195-2.934-7.09-1.892-1.893-4.41-2.935-7.091-2.937-5.541 0-10.047 4.501-10.05 10.028-.001 1.738.46 3.424 1.335 4.921l-.973 3.555 3.649-.957z"/>
+        </svg>
+        <span>Enviar a WhatsApp de Juan</span>
+      </button>
+      <p class="text-[11px] text-center text-[#4a463f]/70 font-medium mt-3 leading-normal">
+        Al presionar, se despachará el contenido editado de la hoja directo a la ventana oficial de chat de Juan Barrueto para la validación definitiva del pedido.
+      </p>
+    </div>
+  </section>
+
+
   <script>
     const prices = {
       single: 4000,
@@ -329,6 +397,14 @@
       double: 0,
       triple: 0
     };
+
+    // REQUERIMIENTO 1: Variable con los datos formateados estrictamente según lo solicitado para el portapapeles
+    const realTransferDataText = `Juan Barrueto Correa
+RUT: 222340969
+Mercado Pago
+Cuenta Vista
+Número de cuenta: 1099212037
+juanbarruetocorrea@gmail.com`;
 
     function changeQty(product, delta) {
       const newQty = qtys[product] + delta;
@@ -360,6 +436,16 @@
         }
       }
 
+      const method = document.querySelector('input[name="delivery-method"]:checked').value;
+      const deliveryRow = document.getElementById('row-delivery-charge');
+      
+      if (method === "Despacho a domicilio") {
+        total += 1500;
+        if (deliveryRow) deliveryRow.classList.remove('hidden');
+      } else {
+        if (deliveryRow) deliveryRow.classList.add('hidden');
+      }
+
       const emptyRow = document.getElementById('row-empty');
       if (hasItems) {
         emptyRow.classList.add('hidden');
@@ -367,13 +453,17 @@
         emptyRow.classList.remove('hidden');
       }
 
-      document.getElementById('total-price').innerText = '$' + total.toLocaleString('es-CL');
+      const elementsTotal = document.querySelectorAll('#total-price');
+      elementsTotal.forEach(el => {
+        el.innerText = '$' + total.toLocaleString('es-CL');
+      });
     }
 
     function toggleDeliveryFields() {
       const method = document.querySelector('input[name="delivery-method"]:checked').value;
       const addressContainer = document.getElementById('container-address');
       const addressInput = document.getElementById('user-address');
+      const errorAlert = document.getElementById('address-error-alert');
 
       if (method === "Despacho a domicilio") {
         addressContainer.classList.remove('opacity-40', 'pointer-events-none');
@@ -382,83 +472,171 @@
         addressContainer.classList.add('opacity-40', 'pointer-events-none');
         addressInput.setAttribute('disabled', 'true');
         addressInput.value = "";
+        if (errorAlert) errorAlert.classList.add('hidden');
+      }
+      
+      updateSummary();
+    }
+
+    function clearAddressError() {
+      const errorAlert = document.getElementById('address-error-alert');
+      if (errorAlert) errorAlert.classList.add('hidden');
+    }
+
+    function validateAddressField() {
+      const method = document.querySelector('input[name="delivery-method"]:checked').value;
+      const errorAlert = document.getElementById('address-error-alert');
+      const addressInput = document.getElementById('user-address');
+      
+      if (method !== "Despacho a domicilio") {
+        if (errorAlert) errorAlert.classList.add('hidden');
+        return true;
+      }
+
+      const text = addressInput.value.toLowerCase();
+      
+      if (text.trim() === "") {
+        if (errorAlert) errorAlert.classList.add('hidden');
+        return false;
+      }
+
+      const hasLasCondes = text.includes("las condes");
+      const hasVitacura = text.includes("vitacura");
+      const hasLoBarnechea = text.includes("lo barnechea");
+
+      if (hasLasCondes || hasVitacura || hasLoBarnechea) {
+        if (errorAlert) errorAlert.classList.add('hidden');
+        return true;
+      } else {
+        if (errorAlert) errorAlert.classList.remove('hidden');
+        return false;
       }
     }
 
-    function copyOrderSummary() {
+    function calculateTotal() {
       let total = 0;
-      let hasItems = false;
-      
-      // Obtener datos del formulario
-      const name = document.getElementById('user-name').value.trim();
-      const method = document.querySelector('input[name="delivery-method"]:checked').value;
-      const address = document.getElementById('user-address').value.trim();
-      const notes = document.getElementById('user-notes').value.trim();
-
-      let text = "*RESUMEN DE PEDIDO - EL MANJAR DE LA LULA* 🧑‍🌾✨\n";
-      text += "_Campaña Solidaria Trabajo País 2026 - Capilla San Rafael_\n";
-      text += "----------------------------------------------\n\n";
-
-      // Agregar cliente si ingresó nombre
-      if (name) {
-        text += `👤 *Cliente:* ${name}\n`;
-      }
-      text += `📦 *Método:* ${method}\n`;
-      if (method === "Despacho a domicilio" && address) {
-        text += `📍 *Dirección:* ${address}\n`;
-      }
-      if (notes) {
-        text += `📝 *Notas:* ${notes}\n`;
-      }
-      text += "\n*PRODUCTOS:*\n";
-
-      const names = {
-        single: "Pote Individual (400g)",
-        double: "Dos Potes (800g)",
-        triple: "Tres Potes (1200g)"
-      };
-
       for (const prod in qtys) {
-        if (qtys[prod] > 0) {
-          hasItems = true;
-          const sub = qtys[prod] * prices[prod];
-          total += sub;
-          text += `• ${qtys[prod]}x ${names[prod]} - $${sub.toLocaleString('es-CL')}\n`;
-        }
+        total += qtys[prod] * prices[prod];
+      }
+      const method = document.querySelector('input[name="delivery-method"]:checked').value;
+      if (method === "Despacho a domicilio") {
+        total += 1500;
+      }
+      return total;
+    }
+
+    function generateDraftText() {
+      const userName = document.getElementById('user-name').value.trim() || "[Nombre no especificado]";
+      const deliveryMethod = document.querySelector('input[name="delivery-method"]:checked').value;
+      const userAddress = document.getElementById('user-address').value.trim();
+      const userNotes = document.getElementById('user-notes').value.trim() || "Ninguna.";
+      const total = calculateTotal();
+
+      let productsPart = "";
+      if (qtys.single > 0) productsPart += `- Pote Individual (400g): ${qtys.single} un. ($${(qtys.single * prices.single).toLocaleString('es-CL')})\n`;
+      if (qtys.double > 0) productsPart += `- Dos Potes (800g): ${qtys.double} un. ($${(qtys.double * prices.double).toLocaleString('es-CL')})\n`;
+      if (qtys.triple > 0) productsPart += `- Tres Potes (1200g): ${qtys.triple} un. ($${(qtys.triple * prices.triple).toLocaleString('es-CL')})\n`;
+
+      let addressPart = "";
+      if (deliveryMethod === "Despacho a domicilio") {
+        addressPart = `Dirección de Despacho: ${userAddress}\nRecargo por Despacho: $1.500\n`;
+      } else {
+        addressPart = `Método: Retiro en Las Condes (Sin costo)\n`;
       }
 
-      if (!hasItems) {
-        alert("Por favor, agrega al menos un producto antes de copiar el pedido.");
+      return `SOLICITUD DE PEDIDO — EL MANJAR DE LA LULA (TRABAJO PAÍS 2026)
+
+Estimado Juan Barrueto,
+
+A través de la presente comunicación formal, comparto el requerimiento detallado correspondiente a la campaña solidaria en beneficio de la comunidad de San Rafael.
+
+Detalle del Solicitante:
+Nombre del Comprador: ${userName}
+
+Estructura de Compra Comprometida:
+${productsPart}
+Logística y Entrega:
+${addressPart}
+Observaciones y Especificaciones Logísticas:
+"${userNotes}"
+
+Monto Neto de Transferencia Comprometido: $${total.toLocaleString('es-CL')}
+
+Agradecemos la gestión y coordinación interna del presente requerimiento.`;
+    }
+
+    function goToDraftScreen() {
+      let totalQty = 0;
+      for (const p in qtys) totalQty += qtys[p];
+
+      if (totalQty === 0) {
+        alert("Por favor, seleccione al menos un producto utilizando los botones de cantidad antes de revisar el borrador.");
         return;
       }
 
-      text += `\n----------------------------------------------\n`;
-      text += `*TOTAL A RECAUDAR:* $${total.toLocaleString('es-CL')}\n\n`;
-      text += "💬 _¡Hola Juan! Copié este resumen desde la web para coordinar el pago y la entrega de mi pedido de manjar artesanal._";
+      const userName = document.getElementById('user-name').value.trim();
+      if (!userName) {
+        alert("Por favor, ingrese su Nombre Completo para estructurar el documento formal.");
+        return;
+      }
 
-      // Copiar de forma nativa al portapapeles
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('btn-copy');
-        const btnText = document.getElementById('btn-copy-text');
-        const originalText = btnText.innerText;
+      const deliveryMethod = document.querySelector('input[name="delivery-method"]:checked').value;
+      if (deliveryMethod === "Despacho a domicilio") {
+        const userAddress = document.getElementById('user-address').value.trim();
+        if (!userAddress) {
+          alert("Por favor, ingrese la Dirección de Despacho completa.");
+          return;
+        }
         
-        // Efecto visual de copiado exitoso
-        btnText.innerText = "✨ ¡Copiado con éxito!";
-        btn.classList.remove('bg-[#8b5e3c]', 'hover:bg-[#7c4f30]');
-        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+        if (!validateAddressField()) {
+          return; 
+        }
+      }
 
-        // Retorna a su estado normal tras 2 segundos
+      const draftText = generateDraftText();
+      document.getElementById('draft-text-content').value = draftText;
+
+      document.getElementById('main-store').classList.add('hidden');
+      document.getElementById('main-draft').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function goToStoreScreen() {
+      document.getElementById('main-draft').classList.add('hidden');
+      document.getElementById('main-store').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function copyTransferData() {
+      navigator.clipboard.writeText(realTransferDataText).then(() => {
+        const btnText = document.getElementById('transfer-btn-text');
+        btnText.innerText = "¡Datos Copiados!";
         setTimeout(() => {
-          btnText.innerText = originalText;
-          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
-          btn.classList.add('bg-[#8b5e3c]', 'hover:bg-[#7c4f30]');
+          btnText.innerText = "Copiar Datos de Transferencia";
         }, 2000);
-
       }).catch(err => {
-        console.error('Error al intentar copiar al portapapeles: ', err);
-        alert("Hubo un error al copiar el texto automáticamente. Inténtalo de nuevo.");
+        console.error('Error al copiar datos bancarios: ', err);
       });
     }
+
+    function copyEntireDraftToClipboard() {
+      const content = document.getElementById('draft-text-content').value;
+      navigator.clipboard.writeText(content).then(() => {
+        const btnText = document.getElementById('copy-btn-text');
+        btnText.innerText = "¡Texto Copiado Correctamente!";
+        setTimeout(() => {
+          btnText.innerText = "Copiar Todo el Pedido";
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar el borrador: ', err);
+      });
+    }
+
+    function sendToWhatsApp() {
+      const finalMessage = document.getElementById('draft-text-content').value;
+      const encodedMessage = encodeURIComponent(finalMessage);
+      const url = `https://wa.me/56974294429?text=${encodedMessage}`;
+      window.open(url, '_blank');
+    }
   </script>
-</body>
-</html>
+</body></html>
