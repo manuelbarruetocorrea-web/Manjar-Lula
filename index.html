@@ -201,7 +201,7 @@
         </div>
 
       </div>
-   </section>
+ </section>
 
     <!-- Live Order Calculator Summary Sheet -->
     <section class="bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-8 shadow-sm space-y-6">
@@ -250,6 +250,45 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- Opciones de Despacho / Retiro -->
+      <div class="space-y-3">
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Método de Entrega</label>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-[#d9d2c5]/60 cursor-pointer hover:bg-[#fcfbf9] transition-colors">
+            <input type="radio" name="delivery-method" value="Retiro en Vitacura" checked onchange="toggleDeliveryFields()" class="w-4 h-4 text-[#8b5e3c] focus:ring-[#8b5e3c]">
+            <div class="text-sm">
+              <span class="block font-bold text-[#5d4037]">Retiro en Vitacura</span>
+              <span class="text-xs text-[#4a463f]/80">Gratis (Coordinar dirección)</span>
+            </div>
+          </label>
+          <label class="flex items-center gap-3 p-3.5 bg-white rounded-xl border border-[#d9d2c5]/60 cursor-pointer hover:bg-[#fcfbf9] transition-colors">
+            <input type="radio" name="delivery-method" value="Despacho a domicilio" onchange="toggleDeliveryFields()" class="w-4 h-4 text-[#8b5e3c] focus:ring-[#8b5e3c]">
+            <div class="text-sm">
+              <span class="block font-bold text-[#5d4037]">Despacho a Domicilio</span>
+              <span class="text-xs text-[#4a463f]/80">Sujeto a factibilidad y costo extra</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Formulario de Datos de Envío -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="space-y-1.5">
+          <label for="user-name" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Tu Nombre completo</label>
+          <input type="text" id="user-name" placeholder="Ej. María Jesús Larraín" class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]">
+        </div>
+        <div id="container-address" class="space-y-1.5 opacity-40 pointer-events-none transition-all duration-200">
+          <label for="user-address" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Dirección de Despacho</label>
+          <input type="text" id="user-address" disabled placeholder="Ej. Av. Luis Pasteur 1234, Vitacura" class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]">
+        </div>
+      </div>
+
+      <!-- Observaciones -->
+      <div class="space-y-1.5">
+        <label for="user-notes" class="block text-xs font-bold uppercase tracking-wider text-[#8b5e3c]">Notas / Observaciones Especiales</label>
+        <textarea id="user-notes" rows="2" placeholder="Ej. Dejar en conserjería, envolver para regalo, restricciones de horario..." class="w-full rounded-xl border border-[#d9d2c5] bg-white p-3 text-sm focus:border-[#8b5e3c] focus:outline-none focus:ring-1 focus:ring-[#8b5e3c]"></textarea>
       </div>
 
       <!-- Total de la orden -->
@@ -331,14 +370,48 @@
       document.getElementById('total-price').innerText = '$' + total.toLocaleString('es-CL');
     }
 
-    // Función modificada para copiar y mostrar feedback visual dinámico
+    function toggleDeliveryFields() {
+      const method = document.querySelector('input[name="delivery-method"]:checked').value;
+      const addressContainer = document.getElementById('container-address');
+      const addressInput = document.getElementById('user-address');
+
+      if (method === "Despacho a domicilio") {
+        addressContainer.classList.remove('opacity-40', 'pointer-events-none');
+        addressInput.removeAttribute('disabled');
+      } else {
+        addressContainer.classList.add('opacity-40', 'pointer-events-none');
+        addressInput.setAttribute('disabled', 'true');
+        addressInput.value = "";
+      }
+    }
+
     function copyOrderSummary() {
       let total = 0;
+      let hasItems = false;
+      
+      // Obtener datos del formulario
+      const name = document.getElementById('user-name').value.trim();
+      const method = document.querySelector('input[name="delivery-method"]:checked').value;
+      const address = document.getElementById('user-address').value.trim();
+      const notes = document.getElementById('user-notes').value.trim();
+
       let text = "*RESUMEN DE PEDIDO - EL MANJAR DE LA LULA* 🧑‍🌾✨\n";
       text += "_Campaña Solidaria Trabajo País 2026 - Capilla San Rafael_\n";
       text += "----------------------------------------------\n\n";
 
-      let hasItems = false;
+      // Agregar cliente si ingresó nombre
+      if (name) {
+        text += `👤 *Cliente:* ${name}\n`;
+      }
+      text += `📦 *Método:* ${method}\n`;
+      if (method === "Despacho a domicilio" && address) {
+        text += `📍 *Dirección:* ${address}\n`;
+      }
+      if (notes) {
+        text += `📝 *Notas:* ${notes}\n`;
+      }
+      text += "\n*PRODUCTOS:*\n";
+
       const names = {
         single: "Pote Individual (400g)",
         double: "Dos Potes (800g)",
@@ -360,24 +433,21 @@
       }
 
       text += `\n----------------------------------------------\n`;
-      text += `*TOTAL A PAGAR:* $${total.toLocaleString('es-CL')}\n\n`;
+      text += `*TOTAL A RECAUDAR:* $${total.toLocaleString('es-CL')}\n\n`;
       text += "💬 _¡Hola Juan! Copié este resumen desde la web para coordinar el pago y la entrega de mi pedido de manjar artesanal._";
 
-      // Copiar al portapapeles de manera moderna
+      // Copiar de forma nativa al portapapeles
       navigator.clipboard.writeText(text).then(() => {
-        // Captura de elementos del botón
         const btn = document.getElementById('btn-copy');
         const btnText = document.getElementById('btn-copy-text');
-        
-        // Guardamos el texto original
         const originalText = btnText.innerText;
         
-        // Cambiamos al estado "¡Copiado!" con color verde éxito
+        // Efecto visual de copiado exitoso
         btnText.innerText = "✨ ¡Copiado con éxito!";
         btn.classList.remove('bg-[#8b5e3c]', 'hover:bg-[#7c4f30]');
         btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
 
-        // Retornar al estado original tras exactamente 2 segundos
+        // Retorna a su estado normal tras 2 segundos
         setTimeout(() => {
           btnText.innerText = originalText;
           btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
