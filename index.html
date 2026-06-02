@@ -201,237 +201,192 @@
         </div>
 
       </div>
-    </section> <!-- Etiqueta de cierre corregida -->
-  
-  <div class="bg-white rounded-3xl border border-[#d9d2c5]/60 p-6 md:p-8 shadow-lg max-w-2xl mx-auto space-y-6">
-    <h3 class="font-serif text-2xl font-bold text-[#5d4037] text-center mb-4">Calcula tu Pedido</h3>
-    
-    <div class="space-y-4">
-      <div>
-        <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest mb-2">Opción de Despacho</label>
-        <div class="grid grid-cols-2 gap-4">
-          <button type="button" onclick="setShipping(false)" id="btn-pickup" class="p-4 rounded-2xl border text-left font-bold text-sm bg-[#f2ede4] border-[#8b5e3c]">
-            Retiro a Coordinar
-            <span class="block text-[11px] font-normal text-[#4a463f] mt-1">Gratis, coordina con Juan.</span>
-          </button>
-          <button type="button" onclick="setShipping(true)" id="btn-delivery" class="p-4 rounded-2xl border text-left font-bold text-sm bg-white border-[#d9d2c5]">
-            Despacho a Domicilio
-            <span class="block text-[11px] font-normal text-[#4a463f] mt-1">+$1.500 (Las Condes, Vitacura, Lo Barnechea).</span>
-          </button>
-        </div>
-      </div>
+   </section>
 
-      <div id="address-block" class="hidden space-y-3">
-        <div>
-          <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest mb-1">Dirección de despacho*</label>
-          <input type="text" id="delivery-address" placeholder="Ej: Av. Vitacura 1234, Vitacura" class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c]" />
-        </div>
-
-        <div>
-          <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest mb-1">Observaciones de Entrega</label>
-          <textarea id="delivery-notes" rows="2" placeholder="Ej: timbre malo, no hay gente en casa, dejar en conserjería..." class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c] resize-none font-sans"></textarea>
-        </div>
-      </div>
-      
-      <div class="space-y-2">
-        <label class="block text-xs font-bold text-[#8b5e3c] uppercase tracking-widest">Tu Nombre</label>
-        <input type="text" id="client-name" placeholder="Ej: Sofía Errázuriz" class="w-full bg-[#fcfbf9] border border-[#d9d2c5] rounded-xl py-3 px-4 text-sm focus:outline-[#8b5e3c]" />
-      </div>
-
-      <div class="bg-[#fcfbf9] border-2 border-dashed border-[#d9d2c5] rounded-2xl p-4 space-y-3">
-        <div class="flex justify-between font-medium text-sm text-[#4a463f]/80">
-          <span>Subtotal packs:</span>
-          <span id="subtotal-display" class="font-mono">$0</span>
-        </div>
-        <div class="flex justify-between font-medium text-sm text-[#4a463f]/80">
-          <span>Despacho:</span>
-          <span id="shipping-display" class="font-mono">$0</span>
-        </div>
-        <div class="h-[1px] bg-[#d9d2c5] border-dashed"></div>
-        <div class="flex justify-between items-center text-lg font-bold text-[#5d4037]">
-          <span>Monto Total:</span>
-          <span id="total-display" class="font-serif font-black text-2xl">$0</span>
-        </div>
-      </div>
-
-      <button type="button" onclick="sendWhatsApp()" class="w-full bg-[#25D366] hover:bg-[#20ba56] text-white py-4 px-6 rounded-2xl font-bold flex items-center justify-center gap-3 transition-transform cursor-pointer">
-        <span>Hacer pedido por WhatsApp</span>
-      </button>
-    </div>
-  </div>
-  </section>
-
-  <section class="max-w-xl mx-auto space-y-4 mt-12">
-    <div class="text-center">
-      <h3 class="font-serif text-2xl font-bold text-[#5d4037]">Datos de Transferencia</h3>
-      <p class="text-xs text-[#4a463f] mt-1">Transfiere de forma segura y envía el comprobante por WhatsApp</p>
-    </div>
-
-    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-2xl max-w-xl mx-auto shadow-sm">
-      <p class="text-xs font-black text-amber-800 uppercase tracking-wider mb-0.5">⚠️ IMPORTANTE</p>
-      <p class="text-xs text-amber-700 font-medium">Antes de transferir pregunta y espera que Juan te confirme el stock disponible.</p>
-    </div>
-    
-    <div class="bg-[#faf6ed] rounded-3xl border-2 border-[#d9d2c5] p-6 space-y-4 shadow-md font-sans">
-      <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
-        <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Titular</span>
-        <span class="col-span-2 text-right font-medium text-[#4a463f]">Juan Barrueto Correa</span>
-      </div>
-      <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
-        <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">RUT</span>
-        <span class="col-span-2 text-right font-mono font-bold text-[#4a463f]">222340969</span>
-      </div>
-      <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
-        <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Banco</span>
-        <span class="col-span-2 text-right font-medium text-[#4a463f]">Mercado Pago</span>
-      </div>
-      <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
-        <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Cuenta</span>
-        <span class="col-span-2 text-right font-medium text-[#4a463f]">Cuenta Vista</span>
-      </div>
-      <div class="grid grid-cols-3 gap-2 py-2 border-b border-[#d9d2c5]/40 text-sm">
-        <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Número</span>
-        <span class="col-span-2 text-right font-mono font-bold text-[#4a463f]">1099212037</span>
-      </div>
-      <div class="grid grid-cols-3 gap-2 py-2 text-sm">
-        <span class="font-bold text-[#8b5e3c] text-xs uppercase tracking-wider">Correo</span>
-        <span class="col-span-2 text-right font-mono text-xs text-[#4a463f]">juanbarruetocorrea@gmail.com</span>
-      </div>
-
-      <div class="pt-2">
-        <button type="button" onclick="copiarDatosTransferencia(event)" class="w-full py-3 px-4 bg-[#8b5e3c] hover:bg-[#5d4037] text-white text-xs font-bold rounded-xl transition-all shadow-sm tracking-wide uppercase flex items-center justify-center gap-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+    <!-- Live Order Calculator Summary Sheet -->
+    <section class="bg-[#fdfbf6]/90 rounded-[35px] border border-[#d9d2c5]/65 p-6 md:p-8 shadow-sm space-y-6">
+      <div class="flex items-center gap-3 border-b border-[#d9d2c5]/50 pb-4">
+        <div class="p-2 bg-[#8b5e3c]/10 rounded-xl text-[#8b5e3c]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
           </svg>
-          Copiar datos de transferencia
-        </button>
+        </div>
+        <div>
+          <span class="text-xs font-bold text-[#8b5e3c] tracking-widest uppercase block">Calculadora en Vivo</span>
+          <h3 class="font-serif text-xl md:text-2xl font-black text-[#5d4037]">Resumen de tu Pedido</h3>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <!-- Tabla de desglose -->
+      <div class="overflow-hidden border border-[#d9d2c5]/50 rounded-2xl bg-white">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#f2ede4]/40 font-mono text-xs uppercase text-[#8b5e3c] tracking-wider border-b border-[#d9d2c5]/50">
+              <th class="p-4 font-bold">Formato</th>
+              <th class="p-4 font-bold text-center">Cant.</th>
+              <th class="p-4 font-bold text-right">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#d9d2c5]/30 font-medium text-[#4a463f]">
+            <tr id="row-single" class="hidden">
+              <td class="p-4">Pote Individual (400g)</td>
+              <td id="table-qty-single" class="p-4 text-center font-mono font-bold">0</td>
+              <td id="table-sub-single" class="p-4 text-right font-mono">$0</td>
+            </tr>
+            <tr id="row-double" class="hidden">
+              <td class="p-4">Dos Potes (800g)</td>
+              <td id="table-qty-double" class="p-4 text-center font-mono font-bold">0</td>
+              <td id="table-sub-double" class="p-4 text-right font-mono">$0</td>
+            </tr>
+            <tr id="row-triple" class="hidden">
+              <td class="p-4">Tres Potes (1200g)</td>
+              <td id="table-qty-triple" class="p-4 text-center font-mono font-bold">0</td>
+              <td id="table-sub-triple" class="p-4 text-right font-mono">$0</td>
+            </tr>
+            <tr id="row-empty">
+              <td colspan="3" class="p-8 text-center text-sm italic text-[#4a463f]/60 bg-[#fcfbf9]">
+                No has seleccionado ningún producto aún. ¡Usa los botones de arriba para armar tu pedido!
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Total de la orden -->
+      <div class="bg-[#f2ede4]/40 rounded-2xl p-5 flex items-center justify-between border border-[#d9d2c5]/40">
+        <div>
+          <span class="block text-xs uppercase font-extrabold tracking-wider text-[#8b5e3c]/80">Total a Recaudar</span>
+          <span class="text-xs text-[#4a463f]/80 font-medium">Todo va directo a los materiales de construcción</span>
+        </div>
+        <div id="total-price" class="text-3xl font-serif font-black text-[#5d4037] tracking-tight">$0</div>
+      </div>
+
+      <!-- Botón de Acción con ID para el cambio a "Copiado" -->
+      <div class="max-w-md mx-auto pt-2">
+        <button type="button" id="btn-copy" onclick="copyOrderSummary()" class="w-full bg-[#8b5e3c] text-white rounded-2xl py-4 px-6 font-serif font-bold text-base flex items-center justify-center gap-3 shadow-md hover:bg-[#7c4f30] transition-all cursor-pointer border border-[#d9d2c5]/20">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+          </svg>
+          <span id="btn-copy-text">Copiar Datos de Pedido</span>
+        </button>
+        <p class="text-[11px] text-center text-[#4a463f]/70 font-medium mt-3 leading-normal px-4">
+          Al copiar, se guardará el resumen listo en tu portapapeles. Luego podrás pegarlo directamente en el chat de WhatsApp de Juan para coordinar tu entrega y pago.
+        </p>
+      </div>
+    </section>
 
   </main>
 
-  <footer class="mt-20 border-t border-[#d9d2c5] bg-[#faf7ef] py-10 px-4 text-center text-xs text-[#4a463f]/70 space-y-2">
-    <p class="font-serif text-sm font-bold text-[#5d4037]">El Manjar de la Lula · Trabajo País 2026</p>
-    <p class="max-w-md mx-auto">Venta con fines benéficos para el salón parroquial de San Rafael.</p>
-  </footer>
-
+  <!-- LOGIC SCRIPT -->
   <script>
-    // Quantities state
-    const qty = {
+    const prices = {
+      single: 4000,
+      double: 7500,
+      triple: 10500
+    };
+
+    const qtys = {
       single: 0,
       double: 0,
       triple: 0
     };
-    let isShipping = false;
 
-    // Unit prices
-    const PRICES = {
-      single: 4000,
-      double: 7500,
-      triple: 10500,
-      shipping: 1500
-    };
-
-    function changeQty(format, delta) {
-      qty[format] = Math.max(0, qty[format] + delta);
-      document.getElementById('qty-' + format).innerText = qty[format];
-      recalc();
-    }
-
-    function setShipping(shippingStatus) {
-      isShipping = shippingStatus;
-      
-      const btnPickup = document.getElementById('btn-pickup');
-      const btnDelivery = document.getElementById('btn-delivery');
-      const addressBlock = document.getElementById('address-block');
-
-      if (isShipping) {
-        btnDelivery.className = "p-4 rounded-2xl border text-left font-bold text-sm bg-[#f2ede4] border-[#8b5e3c]";
-        btnPickup.className = "p-4 rounded-2xl border text-left font-bold text-sm bg-white border-[#d9d2c5]";
-        addressBlock.classList.remove('hidden');
-      } else {
-        btnPickup.className = "p-4 rounded-2xl border text-left font-bold text-sm bg-[#f2ede4] border-[#8b5e3c]";
-        btnDelivery.className = "p-4 rounded-2xl border text-left font-bold text-sm bg-white border-[#d9d2c5]";
-        addressBlock.classList.add('hidden');
+    function changeQty(product, delta) {
+      const newQty = qtys[product] + delta;
+      if (newQty >= 0 && newQty <= 99) {
+        qtys[product] = newQty;
+        document.getElementById(`qty-${product}`).innerText = newQty;
+        updateSummary();
       }
-      recalc();
     }
 
-    function recalc() {
-      const subtotal = (qty.single * PRICES.single) + (qty.double * PRICES.double) + (qty.triple * PRICES.triple);
-      const shippingCost = (subtotal > 0 && isShipping) ? PRICES.shipping : 0;
-      const total = subtotal + shippingCost;
+    function updateSummary() {
+      let total = 0;
+      let hasItems = false;
 
-      document.getElementById('subtotal-display').innerText = '$' + subtotal.toLocaleString('es-CL');
-      document.getElementById('shipping-display').innerText = '$' + shippingCost.toLocaleString('es-CL');
-      document.getElementById('total-display').innerText = '$' + total.toLocaleString('es-CL');
+      for (const prod in qtys) {
+        const q = qtys[prod];
+        const row = document.getElementById(`row-${prod}`);
+        
+        if (q > 0) {
+          hasItems = true;
+          row.classList.remove('hidden');
+          document.getElementById(`table-qty-${prod}`).innerText = q;
+          
+          const subtotal = q * prices[prod];
+          total += subtotal;
+          document.getElementById(`table-sub-${prod}`).innerText = '$' + subtotal.toLocaleString('es-CL');
+        } else {
+          row.classList.add('hidden');
+        }
+      }
+
+      const emptyRow = document.getElementById('row-empty');
+      if (hasItems) {
+        emptyRow.classList.add('hidden');
+      } else {
+        emptyRow.classList.remove('hidden');
+      }
+
+      document.getElementById('total-price').innerText = '$' + total.toLocaleString('es-CL');
     }
 
-    function sendWhatsApp() {
-      const subtotal = (qty.single * PRICES.single) + (qty.double * PRICES.double) + (qty.triple * PRICES.triple);
-      if (subtotal === 0) {
-        alert("Por favor selecciona al menos un pack de potes de manjar.");
+    // Función modificada para copiar y mostrar feedback visual dinámico
+    function copyOrderSummary() {
+      let total = 0;
+      let text = "*RESUMEN DE PEDIDO - EL MANJAR DE LA LULA* 🧑‍🌾✨\n";
+      text += "_Campaña Solidaria Trabajo País 2026 - Capilla San Rafael_\n";
+      text += "----------------------------------------------\n\n";
+
+      let hasItems = false;
+      const names = {
+        single: "Pote Individual (400g)",
+        double: "Dos Potes (800g)",
+        triple: "Tres Potes (1200g)"
+      };
+
+      for (const prod in qtys) {
+        if (qtys[prod] > 0) {
+          hasItems = true;
+          const sub = qtys[prod] * prices[prod];
+          total += sub;
+          text += `• ${qtys[prod]}x ${names[prod]} - $${sub.toLocaleString('es-CL')}\n`;
+        }
+      }
+
+      if (!hasItems) {
+        alert("Por favor, agrega al menos un producto antes de copiar el pedido.");
         return;
       }
 
-      const name = document.getElementById('client-name').value.trim();
-      const address = document.getElementById('delivery-address').value.trim();
-      const notes = document.getElementById('delivery-notes').value.trim();
+      text += `\n----------------------------------------------\n`;
+      text += `*TOTAL A PAGAR:* $${total.toLocaleString('es-CL')}\n\n`;
+      text += "💬 _¡Hola Juan! Copié este resumen desde la web para coordinar el pago y la entrega de mi pedido de manjar artesanal._";
 
-      if (isShipping && address === '') {
-        alert("Por favor indica la dirección de despacho.");
-        return;
-      }
-
-      // Build Message format
-      let text = `¡Hola Juan! Quisiera comprar El Manjar de la Lula para ayudar con Trabajo País 2026. 🍯❤️\n\n`;
-      if (name) text += `*Nombre:* ${name}\n`;
-      
-      text += `*Pedido:*\n`;
-      if (qty.single > 0) text += `• ${qty.single}x Pote Individual (400 gr) — $${(qty.single * PRICES.single).toLocaleString('es-CL')}\n`;
-      if (qty.double > 0) text += `• ${qty.double}x Dos Potes (800 gr) — $${(qty.double * PRICES.double).toLocaleString('es-CL')}\n`;
-      if (qty.triple > 0) text += `• ${qty.triple}x Tres Potes (1.200 gr) — $${(qty.triple * PRICES.triple).toLocaleString('es-CL')}\n`;
-      
-      text += `\n*Entrega:*\n`;
-      if (isShipping) {
-        text += `• Despacho a domicilio (+$1.500)\n`;
-        text += `• Dirección: ${address}\n`;
-        if (notes) text += `• Observaciones: ${notes}\n`;
-      } else {
-        text += `• Retiro presencial listo a acordar.\n`;
-      }
-
-      const grandTotal = subtotal + (isShipping ? PRICES.shipping : 0);
-      text += `\n*Monto Total:* $${grandTotal.toLocaleString('es-CL')}\n\n`;
-      text += `¿Me confirmas disponibilidad para transferir? 😊`;
-
-      window.open(`https://wa.me/56974294429?text=${encodeURIComponent(text)}`, '_blank');
-    }
-
-    function copiarDatosTransferencia(event) {
-      const textoParaCopiar = `Juan Barrueto Correa
-RUT: 222340969
-Mercado Pago
-Cuenta Vista
-Número de cuenta: 1099212037
-juanbarruetocorrea@gmail.com`;
-
-      navigator.clipboard.writeText(textoParaCopiar).then(() => {
-        const btn = event.currentTarget;
-        const htmlOriginal = btn.innerHTML;
+      // Copiar al portapapeles de manera moderna
+      navigator.clipboard.writeText(text).then(() => {
+        // Captura de elementos del botón
+        const btn = document.getElementById('btn-copy');
+        const btnText = document.getElementById('btn-copy-text');
         
-        btn.innerHTML = '¡Datos copiados! ✓';
-        btn.classList.remove('bg-[#8b5e3c]', 'hover:bg-[#5d4037]');
-        btn.classList.add('bg-emerald-600');
+        // Guardamos el texto original
+        const originalText = btnText.innerText;
         
+        // Cambiamos al estado "¡Copiado!" con color verde éxito
+        btnText.innerText = "✨ ¡Copiado con éxito!";
+        btn.classList.remove('bg-[#8b5e3c]', 'hover:bg-[#7c4f30]');
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+
+        // Retornar al estado original tras exactamente 2 segundos
         setTimeout(() => {
-          btn.innerHTML = htmlOriginal;
-          btn.classList.remove('bg-emerald-600');
-          btn.classList.add('bg-[#8b5e3c]', 'hover:bg-[#5d4037]');
+          btnText.innerText = originalText;
+          btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+          btn.classList.add('bg-[#8b5e3c]', 'hover:bg-[#7c4f30]');
         }, 2000);
+
       }).catch(err => {
-        console.error('Error al intentar copiar datos: ', err);
+        console.error('Error al intentar copiar al portapapeles: ', err);
+        alert("Hubo un error al copiar el texto automáticamente. Inténtalo de nuevo.");
       });
     }
   </script>
